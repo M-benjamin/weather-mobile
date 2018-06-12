@@ -11,10 +11,14 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class DetailsWeatherViewController: UIViewController {
+class DetailsWeatherViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var labelMap: UILabel!
-//    var cityname: City?
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var currentWeatherImage: UIImageView!
+    @IBOutlet weak var currentWeatherTypeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var name: String?
     var coordinate: CLLocationCoordinate2D?
@@ -22,13 +26,7 @@ class DetailsWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = name
-        labelMap.text = name
         fetchData()
-        
-        print("\(name)")
-        print("\(coordinate?.latitude)")
-        print("\(coordinate?.longitude)")
-        // Do any additional setup after loading the view.
     }
 
     func fetchData() {
@@ -46,7 +44,14 @@ class DetailsWeatherViewController: UIViewController {
         }
     }
     
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    inRow
+    
 }
