@@ -135,7 +135,7 @@
                                 <rect key="frame" x="0.0" y="314" width="375" height="353"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="vJ4-XM-V30">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyCell" rowHeight="79" id="vJ4-XM-V30" customClass="HourlyCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJ4-XM-V30" id="D69-eO-mGY">
@@ -194,7 +194,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="Aqv-BZ-8yV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyCell" rowHeight="50" id="Aqv-BZ-8yV" customClass="DailyCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="107" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aqv-BZ-8yV" id="S8a-1a-daT">
@@ -247,7 +247,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="q7m-Lq-Bim">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="extraCell" rowHeight="130" id="q7m-Lq-Bim" customClass="ExtraCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q7m-Lq-Bim" id="dua-6H-ypf">
@@ -362,7 +362,6 @@
                         <viewLayoutGuide key="safeArea" id="Sqh-gx-UC6"/>
                     </view>
                     <connections>
-                        <outlet property="currentLbelTyprL" destination="wzu-E7-xZ6" id="k7X-nZ-4qd"/>
                         <outlet property="currentWeatherImage" destination="tE5-Ym-mC5" id="RBO-Ur-s7W"/>
                         <outlet property="currentWeatherTypeLabel" destination="wzu-E7-xZ6" id="IJ4-ne-PCF"/>
                         <outlet property="dateLabel" destination="2Fa-td-HbB" id="QYI-3h-KFE"/>
@@ -373,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irh-HR-TWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="-28"/>
+            <point key="canvasLocation" x="671" y="21"/>
         </scene>
     </scenes>
 </document>
