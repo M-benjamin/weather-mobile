@@ -28,12 +28,13 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
     var selectedCity: City?
     
     override func viewDidLoad() {
+          super.viewDidLoad()
+        
         if (selectedCity != nil){
             coordinate = selectedCity?.coordinates
             name = selectedCity?.name
         }
         
-        super.viewDidLoad()
         self.navigationItem.title = name
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,9 +42,7 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
         self.downloadForecastData ()
     }
     
-    
     func downloadForecastData () {
-       
         guard let lat = coordinate?.latitude, let long = coordinate?.longitude else {return}
         Alamofire.request("https://api.darksky.net/forecast/b8559c6c8b247d844069369a19a9d7b8/\(lat),\(long)?si").responseJSON { response in
             
@@ -79,9 +78,7 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
                         let forecast = ForecastHourly(weatherDict: obj)
                         self.forecastsHours.append(forecast)
                     }
-//                    self.forecastsDay.remove(at: 0)
                 }
-                
                 self.updateMainUI()
                 self.tableView.reloadData()
             }
@@ -106,7 +103,6 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         switch indexPath.section {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyCell", for: indexPath) as? HourlyCell {
@@ -128,7 +124,6 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
             
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraCell {
-//                let current = currentWeather?.;[indexPath.row]
                 if let currentWeather = currentWeather {
                     cell.configureCell(currentTemp: currentWeather)
                 }
@@ -140,7 +135,6 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
             return UITableViewCell()
         }
     }
-    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
@@ -184,6 +178,5 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
             currentWeatherTypeLabel.text = currentWeather.weatherType
             currentWeatherImage.image = UIImage(named: currentWeather.weatherIcon)
         }
-        
     }
 }

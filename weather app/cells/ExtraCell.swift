@@ -15,7 +15,6 @@ class ExtraCell: UITableViewCell {
     @IBOutlet weak var windValue: UILabel!
     @IBOutlet weak var pressureTitle: UILabel!
     @IBOutlet weak var pressureValue: UILabel!
-    
     @IBOutlet weak var uvText: UILabel!
     @IBOutlet weak var uvValue: UILabel!
     

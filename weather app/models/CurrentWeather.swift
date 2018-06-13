@@ -23,7 +23,6 @@ class CurrentWeather{
     var UV: Double
     
     init(json: JSON) {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
