@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class CurrentWeather{
-    
     var date: String
     var weatherType: String
     var weatherIcon: String

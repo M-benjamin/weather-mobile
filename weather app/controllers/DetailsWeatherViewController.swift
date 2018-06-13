@@ -25,8 +25,14 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
     var currentWeather: CurrentWeather?
     var forecastsDay = [ForecastDaily]()
     var forecastsHours = [ForecastHourly]()
-
+    var selectedCity: City?
+    
     override func viewDidLoad() {
+        if (selectedCity != nil){
+            coordinate = selectedCity?.coordinates
+            name = selectedCity?.name
+        }
+        
         super.viewDidLoad()
         self.navigationItem.title = name
         tableView.delegate = self
@@ -121,9 +127,7 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
             }
             
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as?
-            ExtraCell {
-                
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraCell {
 //                let current = currentWeather?.;[indexPath.row]
                 if let currentWeather = currentWeather {
                     cell.configureCell(currentTemp: currentWeather)
@@ -175,7 +179,7 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
     func updateMainUI() {
         if let currentWeather = currentWeather {
             dateLabel.text = currentWeather.date
-            temperatureLabel.text = "\(currentWeather.currentTemp)°C"
+            temperatureLabel.text = "\(Int(currentWeather.currentTemp))°C"
             locationLabel.text = name
             currentWeatherTypeLabel.text = currentWeather.weatherType
             currentWeatherImage.image = UIImage(named: currentWeather.weatherIcon)

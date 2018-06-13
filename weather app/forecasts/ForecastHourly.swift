@@ -28,8 +28,6 @@ class ForecastHourly {
         dateFormatter.timeStyle = .none
         
         self.date = unixConvertedDate.hourOfTheDay()
-        
-        print(" date of day ---------- >>>>>> \(self.date)")
     }
 }
 

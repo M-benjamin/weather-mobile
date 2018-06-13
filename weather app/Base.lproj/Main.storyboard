@@ -44,25 +44,82 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZA4-DA-xuk">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmr-3E-Ufz">
+                                <rect key="frame" x="175" y="64" width="200" height="603"/>
+                                <subviews>
+                                    <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2EB-9W-hcD">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="603"/>
+                                        <color key="backgroundColor" red="1" green="0.97392264930000005" blue="0.98522428880000001" alpha="0.65977112671267613" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="EOk-TE-eXK"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="vAh-Gm-bMs" customClass="CityTableViewCell" customModule="weather_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vAh-Gm-bMs" id="GFV-j9-LrF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH6-a0-Ptq">
+                                                            <rect key="frame" x="10" y="10" width="42" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="kH6-a0-Ptq" firstAttribute="leading" secondItem="GFV-j9-LrF" secondAttribute="leading" constant="10" id="AHO-v6-Ur3"/>
+                                                        <constraint firstItem="kH6-a0-Ptq" firstAttribute="top" secondItem="GFV-j9-LrF" secondAttribute="top" constant="10" id="H2U-Aw-rEz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kH6-a0-Ptq" secondAttribute="bottom" constant="10" id="rqG-bB-TWS"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cityName" destination="kH6-a0-Ptq" id="DUl-XS-ILj"/>
+                                                    <segue destination="045-XJ-Th5" kind="show" identifier="DetailSegueCell" id="k67-Zo-F6e"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2EB-9W-hcD" firstAttribute="top" secondItem="Nmr-3E-Ufz" secondAttribute="top" id="FGc-aw-bHI"/>
+                                    <constraint firstAttribute="bottom" secondItem="2EB-9W-hcD" secondAttribute="bottom" id="TaL-Nj-puH"/>
+                                    <constraint firstItem="2EB-9W-hcD" firstAttribute="leading" secondItem="Nmr-3E-Ufz" secondAttribute="leading" id="nbL-1r-LO2"/>
+                                    <constraint firstAttribute="width" constant="200" id="xda-3t-fH2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Nmr-3E-Ufz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="G3G-BU-4rt"/>
                             <constraint firstItem="ZA4-DA-xuk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N8f-BM-Ozt"/>
+                            <constraint firstItem="Nmr-3E-Ufz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T4Q-6g-PGo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZA4-DA-xuk" secondAttribute="bottom" id="grm-nr-eOG"/>
                             <constraint firstItem="ZA4-DA-xuk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kxd-cJ-dO7"/>
+                            <constraint firstItem="Nmr-3E-Ufz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rlR-C1-pXg"/>
                             <constraint firstItem="ZA4-DA-xuk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="thP-WM-oxb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fCG-GC-pxk"/>
+                    <navigationItem key="navigationItem" id="fCG-GC-pxk">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-menu-50" id="PAz-Aa-haY">
+                            <connections>
+                                <action selector="rightBtnPress:" destination="BYZ-38-t0r" id="XH4-J5-R61"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="ZA4-DA-xuk" id="RnF-Z2-Gp0"/>
+                        <outlet property="sideBarConstraint" destination="T4Q-6g-PGo" id="omd-ro-RVU"/>
+                        <outlet property="tableView" destination="2EB-9W-hcD" id="rbd-Db-iDs"/>
                         <segue destination="045-XJ-Th5" kind="show" identifier="mapSeg" id="UCl-64-u4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273" y="9"/>
+            <point key="canvasLocation" x="-274.39999999999998" y="8.5457271364317844"/>
         </scene>
         <!--Details Weather View Controller-->
         <scene sceneID="3Fb-2I-0pH">
@@ -135,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="314" width="375" height="353"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyCell" rowHeight="79" id="vJ4-XM-V30" customClass="HourlyCell" customModule="weather_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyCell" rowHeight="79" id="vJ4-XM-V30" customClass="HourlyCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJ4-XM-V30" id="D69-eO-mGY">
@@ -200,7 +257,7 @@
                                             <outlet property="tempLabel" destination="ECq-uc-gnG" id="xHe-8F-VFq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyCell" rowHeight="50" id="Aqv-BZ-8yV" customClass="DailyCell" customModule="weather_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyCell" rowHeight="50" id="Aqv-BZ-8yV" customClass="DailyCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="107" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aqv-BZ-8yV" id="S8a-1a-daT">
@@ -259,7 +316,7 @@
                                             <outlet property="weatherIcon" destination="TbA-My-7KS" id="Poe-hy-Hgx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="extraCell" rowHeight="130" id="q7m-Lq-Bim" customClass="ExtraCell" customModule="weather_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="extraCell" rowHeight="130" id="q7m-Lq-Bim" customClass="ExtraCell" customModule="weather_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q7m-Lq-Bim" id="dua-6H-ypf">
@@ -394,7 +451,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irh-HR-TWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="-186"/>
+            <point key="canvasLocation" x="634" y="9"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-menu-50" width="50" height="50"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="k67-Zo-F6e"/>
+    </inferredMetricsTieBreakers>
 </document>

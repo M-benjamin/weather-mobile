@@ -21,12 +21,12 @@ class ExtraCell: UITableViewCell {
     
     func configureCell(currentTemp: CurrentWeather){
         humidityText.text = "Humidity"
-        humidityValue.text = "\(currentTemp.humidity * 100)%"
+        humidityValue.text = "\(Int(currentTemp.humidity * 100)) %"
         windText.text = "Wind Speed"
-        windValue.text = "\(currentTemp.windSpeed)km/h"
+        windValue.text = "\(Int(currentTemp.windSpeed)) km/h"
         pressureTitle.text = "Pressure"
-        pressureValue.text = "\(currentTemp.pressure)hPa"
+        pressureValue.text = "\(Int(currentTemp.pressure))hPa"
         uvText.text = "UV Index"
-        uvValue.text = "\(currentTemp.UV)"
+        uvValue.text = "\(Int(currentTemp.UV))"
     }
 }
