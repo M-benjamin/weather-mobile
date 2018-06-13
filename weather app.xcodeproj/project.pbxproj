@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0283C1C320D1396F0077A448 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0283C1C220D1396F0077A448 /* CityTableViewCell.swift */; };
 		22D331AD09244B1151356950 /* Pods_weather_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F69880A3D086BC3EEEF588F /* Pods_weather_app.framework */; };
 		C71CFCEE20CFE68F00263A9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFCED20CFE68F00263A9D /* Constants.swift */; };
 		C71CFCF020CFE8BA00263A9D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71CFCEF20CFE8BA00263A9D /* CurrentWeather.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0283C1C220D1396F0077A448 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		230BE6DF3F8EB24961A73295 /* Pods-weather app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weather app/Pods-weather app.debug.xcconfig"; sourceTree = "<group>"; };
 		6F69880A3D086BC3EEEF588F /* Pods_weather_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71CFCED20CFE68F00263A9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C7B48ACB20CFD2B600E457FA /* ExtraCell.swift */,
 				C71CFCED20CFE68F00263A9D /* Constants.swift */,
 				C71CFCEF20CFE8BA00263A9D /* CurrentWeather.swift */,
+				0283C1C220D1396F0077A448 /* CityTableViewCell.swift */,
 			);
 			path = "weather app";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				C7E2BE4D20CDA68500B5E0DA /* City.swift in Sources */,
 				C7E2BE4F20CDC35D00B5E0DA /* MapViewController.swift in Sources */,
 				C7B48AC820CFD22C00E457FA /* HourlyCell.swift in Sources */,
+				0283C1C320D1396F0077A448 /* CityTableViewCell.swift in Sources */,
 				C71CFCEE20CFE68F00263A9D /* Constants.swift in Sources */,
 				C7B48ACA20CFD2A000E457FA /* DailyCell.swift in Sources */,
 				C78B01A320CEAE1600238378 /* Forecast.swift in Sources */,

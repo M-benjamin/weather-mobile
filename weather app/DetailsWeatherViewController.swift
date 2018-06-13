@@ -23,10 +23,14 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
     var name: String?
     var coordinate: CLLocationCoordinate2D?
     var currentWeather: CurrentWeather!
-    
+     var selectedCity: City?
     override func viewDidLoad() {
+        if (selectedCity != nil){
+            coordinate = selectedCity?.coordinates
+            name = selectedCity?.name
+        }
         super.viewDidLoad()
-        self.navigationItem.title = name
+         self.navigationItem.title = name
         tableView.delegate = self
         tableView.dataSource = self
         requestDetails()
@@ -77,21 +81,15 @@ class DetailsWeatherViewController: UIViewController, UITableViewDataSource , UI
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyCell", for: indexPath) as! HourlyCell
-//            if let cocktail = cocktail {
-//                cell.configure(withCocktail: cocktail)
-//            }
+
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailyCell", for: indexPath) as! DailyCell
-//            if let cocktail = cocktail {
-//                cell.configure(ingredient: cocktail.ingredients[indexPath.row])
-//            }
+
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as! ExtraCell
-//            if let cocktail = cocktail {
-//                cell.configure(withCocktail: cocktail)
-//            }
+
             return cell
         default:
             return UITableViewCell()
