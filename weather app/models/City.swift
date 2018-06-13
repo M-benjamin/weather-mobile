@@ -17,7 +17,7 @@ import AddressBook
 struct City {
     var name: String
     var coordinates: CLLocationCoordinate2D
-    var forecast: Forecast?
+    var forecast: ForecastDaily?
  
     init(name: String, coordinates: CLLocationCoordinate2D) {
         self.name = name
